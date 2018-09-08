@@ -16,7 +16,7 @@ discord.on('message', msg => {
   
   if (['?', 'what', 'what?', 'huh', 'huh?', 'eh?'].includes(msg.content)) {
     msg.channel.send(cachedMessages[msg.channel.name].toUpperCase());
-  } else if (msg.author.id == '135627399420313600' && Math.random() <= 1/50) {
+  } else if (msg.author.id == '135627399420313600' && msg.content.length >= 10 && Math.random() <= 1/50) {
     msg.channel.send(capitlizeFunky(msg.content));
   } else {
     cachedMessages[msg.channel.name] = msg.content;
