@@ -18,6 +18,8 @@ discord.on('message', msg => {
     msg.channel.send(cachedMessages[msg.channel.name].toUpperCase());
   } else if (msg.author.id == '135627399420313600' && msg.content.length >= 10 && Math.random() <= 1/50) {
     msg.channel.send(capitlizeFunky(msg.content));
+  } else if (msg.channel.name == 'zingers' && msg.author.id != '135627399420313600') {
+    msg.channel.send('zinger');
   } else {
     cachedMessages[msg.channel.name] = msg.content;
   }
